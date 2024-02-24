@@ -1,0 +1,63 @@
+
+<div class="row">
+
+  <div class="row align-items-start">
+    <div class="m-1" [ngClass]="isSidePanelVisible? 'col-7':'col-11'">
+
+      <div class="card text-center">
+        <div class="card-header text-end">
+          <button class="btn btn-primary" (click)="onChangeVisibility()">Active</button>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            @for(prod of products; track prod.id){
+
+              <div class="col-3 mt-2">
+                <div class="card">
+                  <img class="card-img-top" src="{{prod.image}}" alt="Card image">
+                  <div class="card-body">
+                    <h4 class="card-title">{{prod.title}}</h4>
+                    <p class="card-text">{{prod.description}}</p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                  </div>
+                </div>
+              </div>
+            }@empty {
+              <h1>NO hay valores</h1>
+              }
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    @if (isSidePanelVisible) {
+
+
+      <div class="col-3 m-1">
+
+
+        <div class="card text-center">
+          <div class="card-header text-end">
+            <button class="btn btn-primary"  (click)="closeSidePanel()">Active</button>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+
+
+      </div>
+    }
+  </div>
+
+
+</div>
+
+
+
+
